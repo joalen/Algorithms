@@ -16,7 +16,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
-        ref: 7c03bafe32b518182e09e92fa57358a01043a504
+        ref: da50861a53fc2f6642cfc7d82c285166f41d03e2
   
     - name: Set up JDK 17 for project
       uses: actions/setup-java@v4
@@ -26,9 +26,10 @@ jobs:
 
     - name: Overwrite old build.gradle file
       run: |
-        curl -L -o newbuild.gradle https://pastebin.ai/download/ipb61mpv0i
+        curl -L -o newbuild.gradle https://pastebin.ai/download/igyyv7ueca
         mv newbuild.gradle build.gradle
-    - name: Build project with JDK 8
+    
+    - name: Build project with JDK 17
       run: ./gradlew test jacocoTestReport
 
     - name: Upload JaCoCo reports
