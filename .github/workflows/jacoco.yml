@@ -26,7 +26,7 @@ jobs:
 
     - name: Overwrite old build.gradle file
       run: |
-        curl -L -o newbuild.gradle https://pastebin.ai/download/igyyv7ueca
+        wget -O newbuild.gradle https://pastebin.ai/raw/igyyv7ueca
         mv newbuild.gradle build.gradle
     
     - name: Build project with JDK 17
